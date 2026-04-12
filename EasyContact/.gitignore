@@ -1,9 +1,61 @@
 
+# Archivos y carpetas de Visual Studio
 .vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos de configuración temporales
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# Archivos de compilación
 bin/
 obj/
-*.user
-*.suo
-*.log
-*.vsidx
-*.vscode/
+Debug/
+Release/
+
+# Archivos de cache y de IDE
+*.dbmdl
+*.jfm
+*.pdb
+*.cache
+*.ilk
+*.aps
+*.ncb
+*.opendb
+*.VC.db
+
+# Archivos de configuración de paquetes
+packages/
+*.nuget
+*.nupkg
+
+# Archivos de publicación
+publish/
+*.Publish.xml
+*.pubxml
+*.publishproj
+
+# Archivos de configuración de Azure y otros servicios
+*.azurePubxml
+*.json
+*.config
+
+# Archivos de test y cobertura
+TestResults/
+*.coverage
+*.coveragexml
+
+# Archivos de estilo y editor
+*.DotSettings
+*.DotSettings.user
+
+# Archivos de sistema
+Thumbs.db
+ehthumbs.db
+Desktop.ini
