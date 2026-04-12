@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\vasqu\\OneDrive\\Documentos\\Universidad\\ciclo_03\\Programacion1\\ProyectoCatedraAgendaContactos\\EasyContact\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{DAAF4E53-2A1F-4E9D-9F80-BBB408C790E2}|GUI\\GUI.csproj|c:\\users\\vasqu\\onedrive\\documentos\\universidad\\ciclo_03\\programacion1\\proyectocatedraagendacontactos\\easycontact\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DAAF4E53-2A1F-4E9D-9F80-BBB408C790E2}|GUI\\GUI.csproj|solutionrelative:gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,23 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\vasqu\\OneDrive\\Documentos\\Universidad\\ciclo_03\\Programacion1\\ProyectoCatedraAgendaContactos\\EasyContact\\GUI\\Form1.cs",
-              "RelativeDocumentMoniker": "GUI\\Form1.cs",
-              "ToolTip": "C:\\Users\\vasqu\\OneDrive\\Documentos\\Universidad\\ciclo_03\\Programacion1\\ProyectoCatedraAgendaContactos\\EasyContact\\GUI\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\Form1.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T14:18:53.265Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
