@@ -51,7 +51,7 @@
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(131, 23);
             this.btnNuevoCliente.TabIndex = 0;
-            this.btnNuevoCliente.Text = "Nuevo Cliente";
+            this.btnNuevoCliente.Text = "Nuevo Contacto";
             this.btnNuevoCliente.UseVisualStyleBackColor = false;
             this.btnNuevoCliente.Click += new System.EventHandler(this.button1_Click);
             // 
