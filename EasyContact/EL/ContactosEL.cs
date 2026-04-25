@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EL
 {
-    public class ContactoEL
+    public class ContactosEL
     {
         public int IdCliente { get; set; }
         public string Nombres { get; set; }
