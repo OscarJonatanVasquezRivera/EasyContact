@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EL
 {
-    public class UsuarioEL
+    public class UsuariosEL
     {
         public int IdUsuario { get; set; }
         public string Usuario { get; set; } 
