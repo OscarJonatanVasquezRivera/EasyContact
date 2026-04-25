@@ -6,4 +6,5 @@
   <Project Path="DAL/DAL.csproj" Id="ca678afe-a467-4919-aa8f-cd54fc68a570" />
   <Project Path="EL/EL.csproj" Id="b148bce4-cf3b-4a95-8a14-f3687f7e9d01" />
   <Project Path="GUI/GUI.csproj" Id="daaf4e53-2a1f-4e9d-9f80-bbb408c790e2" />
+  <Project Path="Helpers/Helpers.csproj" Id="36fb9e3d-12d4-474c-a93e-e0488b2e0047" />
 </Solution>

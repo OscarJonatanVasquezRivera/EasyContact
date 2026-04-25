@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using EL;
 namespace GUI
 {
     internal class Program
@@ -13,7 +15,7 @@ namespace GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Aquí decides qué formulario abre primero
+           
             Application.Run(new Form3());
         }
     }

@@ -16,5 +16,5 @@ namespace DAL
             return new SqlConnection(_conexiondb);
         }
     }
-
 }
+

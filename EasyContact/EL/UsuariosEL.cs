@@ -10,6 +10,7 @@ namespace EL
     {
         public int IdUsuario { get; set; }
         public string Usuario { get; set; } 
-        public string Contrasena { get; set; }
+        public string Clave { get; set; }
+        public string Rol { get; set; }
     }
 }

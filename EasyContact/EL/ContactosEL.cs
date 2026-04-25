@@ -8,10 +8,11 @@ namespace EL
 {
     public class ContactosEL
     {
-        public int IdCliente { get; set; }
+        public int IdContacto { get; set; }
         public string Nombres { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
         public string Direccion { get; set; }
+        public int IdUsuario { get; set; } 
     }
 }

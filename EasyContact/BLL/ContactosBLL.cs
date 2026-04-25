@@ -10,11 +10,9 @@ namespace BLL
     {
         private ContactosDAL _contactosDAL;
 
-
         public int Guardar(ContactosEL contacto, int id = 0, bool esEdicion = false)
         {
             _contactosDAL = new ContactosDAL();
-
 
             contacto.Nombres = contacto.Nombres.Trim();
             contacto.Telefono = contacto.Telefono.Trim().Replace("-", "").Replace("(", "").Replace(")", "");
@@ -29,10 +27,8 @@ namespace BLL
             if (string.IsNullOrWhiteSpace(contacto.Correo))
                 throw new Exception("El correo del contacto no puede estar vacío.");
 
-
             return _contactosDAL.Guardar(contacto, id, esEdicion);
         }
-
 
         public int Actualizar(ContactosEL contacto)
         {
@@ -40,20 +36,17 @@ namespace BLL
             return _contactosDAL.Actualizar(contacto);
         }
 
-
         public List<ContactosEL> Listar(int idUsuario)
         {
             _contactosDAL = new ContactosDAL();
             return _contactosDAL.MostrarContactos(idUsuario);
         }
 
-
         public ContactosEL BuscarPorId(int id, int idUsuario)
         {
             var contactos = Listar(idUsuario);
             return contactos.Where(x => x.IdContacto == id).FirstOrDefault();
         }
-
 
         public List<ContactosEL> BuscarPorNombre(string nombre, int idUsuario)
         {
@@ -63,13 +56,11 @@ namespace BLL
                 .ToList();
         }
 
-
         public int Eliminar(int id, int idUsuario)
         {
             _contactosDAL = new ContactosDAL();
             return _contactosDAL.Eliminar(id, idUsuario);
         }
-
 
         public ContactosEL Editar(int id, int idUsuario)
         {
