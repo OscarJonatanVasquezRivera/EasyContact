@@ -16,9 +16,16 @@ namespace GUI
 {
     public partial class Form2 : Form
     {
-        public Form2()
+
+        // En este caso, como Form2 debe refrescar la lista de contactos en Form1
+        // después de agregar un nuevo registro, necesitamos recibir una referencia
+        // de Form1 en el constructor.
+
+        private Form1 _form1;
+        public Form2(Form1 form1)
         {
             InitializeComponent();
+            _form1 = form1;
         }
 
         private void label2_Click(object sender, EventArgs e)

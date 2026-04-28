@@ -35,11 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
-            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).BeginInit();
             this.SuspendLayout();
@@ -94,10 +94,6 @@
             this.txtNombres.TabIndex = 4;
             this.txtNombres.TextChanged += new System.EventHandler(this.txtNombres_TextChanged);
             // 
-            // bsCliente
-            // 
-            this.bsCliente.DataSource = typeof(EL.ContactosEL);
-            // 
             // txtDireccion
             // 
             this.txtDireccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "Direccion", true));
@@ -139,6 +135,10 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // bsCliente
+            // 
+            this.bsCliente.DataSource = typeof(EL.ContactosEL);
+            // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Red;
@@ -171,7 +171,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "EasyContact || Nuevo Contacto";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).EndInit();
             this.ResumeLayout(false);
@@ -190,7 +190,7 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.BindingSource bsCliente;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

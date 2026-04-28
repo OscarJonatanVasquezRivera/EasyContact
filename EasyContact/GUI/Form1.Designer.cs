@@ -102,6 +102,7 @@
             this.dgv.DataSource = this.bindingSource1;
             this.dgv.Location = new System.Drawing.Point(12, 186);
             this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
             this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(806, 252);
@@ -114,6 +115,7 @@
             this.IdContacto.HeaderText = "IdContacto";
             this.IdContacto.MinimumWidth = 6;
             this.IdContacto.Name = "IdContacto";
+            this.IdContacto.ReadOnly = true;
             this.IdContacto.Width = 125;
             // 
             // Nombres
@@ -122,6 +124,7 @@
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.MinimumWidth = 6;
             this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             this.Nombres.Width = 125;
             // 
             // Telefono
@@ -130,6 +133,7 @@
             this.Telefono.HeaderText = "Telefono";
             this.Telefono.MinimumWidth = 6;
             this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
             this.Telefono.Width = 125;
             // 
             // Correo
@@ -138,6 +142,7 @@
             this.Correo.HeaderText = "Correo";
             this.Correo.MinimumWidth = 6;
             this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
             this.Correo.Width = 150;
             // 
             // Direccion
@@ -146,6 +151,7 @@
             this.Direccion.HeaderText = "Direccion";
             this.Direccion.MinimumWidth = 6;
             this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
             this.Direccion.Width = 150;
             // 
             // IdUsuario
@@ -154,6 +160,7 @@
             this.IdUsuario.HeaderText = "IdUsuario";
             this.IdUsuario.MinimumWidth = 6;
             this.IdUsuario.Name = "IdUsuario";
+            this.IdUsuario.ReadOnly = true;
             this.IdUsuario.Width = 125;
             // 
             // bindingSource1
