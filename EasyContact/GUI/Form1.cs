@@ -41,7 +41,7 @@ namespace GUI
                     string direccion = fila.Cells["Direccion"].Value?.ToString() ?? "";
                     string idUsuario = fila.Cells["IdUsuario"].Value?.ToString() ?? "";
 
-                    // Aquí puedes usar los valores si lo necesitas
+                 
                 }
             }
             catch (Exception ex)
@@ -149,7 +149,7 @@ namespace GUI
 
         private void label5_Click(object sender, EventArgs e)
         {
-            // Evento vacío, puedes eliminarlo si no lo usas
+            
         }
     }
 }

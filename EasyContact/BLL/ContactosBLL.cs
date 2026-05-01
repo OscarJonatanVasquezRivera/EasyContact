@@ -94,9 +94,9 @@ namespace BLL
         //pero con diferente número de teléfono
         public void ValidarDuplicados(ContactosEL contacto, int idUsuario)
         {
-            var lista = Listar(idUsuario); 
+            var lista = Listar(idUsuario);
             var existente = lista.FirstOrDefault(i =>
-                i.Telefono == contacto.Telefono);
+        i.Telefono == contacto.Telefono && i.IdContacto != contacto.IdContacto);
 
             if (existente != null)
                 throw new Exception("Ya existe un contacto con ese teléfono.");
