@@ -2,9 +2,8 @@ using EL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration; 
+
 
 namespace DAL
 {
@@ -13,7 +12,8 @@ namespace DAL
         // Guardar: sirve para insertar o actualizar
         public int Guardar(ContactosEL contacto, int id = 0, bool esEdicion = false)
         {
-            using (SqlConnection cn = new ConexionDB().ObtenerConexion())
+            using (SqlConnection cn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["EasyContactDB"].ConnectionString))
             {
                 cn.Open();
 
@@ -21,12 +21,12 @@ namespace DAL
 
                 if (esEdicion)
                 {
-                    query = "UPDATE ContactosEL SET Nombres=@nombres, Telefono=@telefono, Correo=@correo, Direccion=@direccion " +
+                    query = "UPDATE Contactos SET Nombres=@nombres, Telefono=@telefono, Correo=@correo, Direccion=@direccion " +
                             "WHERE IdContacto=@idContacto AND IdUsuario=@idUsuario";
                 }
                 else
                 {
-                    query = "INSERT INTO ContactosEL (Nombres, Telefono, Correo, Direccion, IdUsuario) " +
+                    query = "INSERT INTO Contactos (Nombres, Telefono, Correo, Direccion, IdUsuario) " +
                             "VALUES (@nombres, @telefono, @correo, @direccion, @idusuario)";
                 }
 
@@ -51,11 +51,12 @@ namespace DAL
         {
             List<ContactosEL> lista = new List<ContactosEL>();
 
-            using (SqlConnection cn = new ConexionDB().ObtenerConexion())
+            using (SqlConnection cn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["EasyContactDB"].ConnectionString))
             {
                 cn.Open();
 
-                string query = "SELECT * FROM ContactosEL WHERE IdUsuario=@idUsuario";
+                string query = "SELECT * FROM Contactos WHERE IdUsuario=@idUsuario";
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
 
@@ -80,11 +81,12 @@ namespace DAL
         // Actualizar (separado, aunque Guardar con esEdicion=true también lo hace)
         public int Actualizar(ContactosEL contacto)
         {
-            using (SqlConnection cn = new ConexionDB().ObtenerConexion())
+            using (SqlConnection cn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["EasyContactDB"].ConnectionString))
             {
                 cn.Open();
 
-                string query = "UPDATE ContactosEL SET Nombres=@nombres, Telefono=@telefono, Correo=@correo, Direccion=@direccion " +
+                string query = "UPDATE Contactos SET Nombres=@nombres, Telefono=@telefono, Correo=@correo, Direccion=@direccion " +
                                "WHERE IdContacto=@idContacto AND IdUsuario=@idUsuario";
 
                 SqlCommand cmd = new SqlCommand(query, cn);
@@ -102,11 +104,12 @@ namespace DAL
         // Eliminar
         public int Eliminar(int idContacto, int idUsuario)
         {
-            using (SqlConnection cn = new ConexionDB().ObtenerConexion())
+            using (SqlConnection cn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["EasyContactDB"].ConnectionString))
             {
                 cn.Open();
 
-                string query = "DELETE FROM ContactosEL WHERE IdContacto=@idContacto AND IdUsuario=@idUsuario";
+                string query = "DELETE FROM Contactos WHERE IdContacto=@idContacto AND IdUsuario=@idUsuario";
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.Parameters.AddWithValue("@idContacto", idContacto);
                 cmd.Parameters.AddWithValue("@idUsuario", idUsuario);

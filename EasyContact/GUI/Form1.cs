@@ -151,5 +151,10 @@ namespace GUI
         {
             
         }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

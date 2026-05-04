@@ -10,7 +10,7 @@ namespace GUI
 {
     internal class Program
     {
-        [STAThread]
+        [STAThread] //propiedad que pusimos para que la app no se cayera al copiar y pegar texto en los textbox
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();

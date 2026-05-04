@@ -1,6 +1,7 @@
 using EL;
 using System;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace DAL
 {
@@ -8,11 +9,13 @@ namespace DAL
     {
         public UsuariosEL Login(string usuario, string clave)
         {
-            using (SqlConnection cn = new ConexionDB().ObtenerConexion())
+            // Ahora usamos directamente la cadena desde App.config
+            using (SqlConnection cn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["EasyContactDB"].ConnectionString))
             {
                 cn.Open();
 
-                string query = "SELECT * FROM UsuariosEL WHERE Usuario=@usuario AND Clave=@clave";
+                string query = "SELECT * FROM Usuarios WHERE Usuario=@usuario AND Clave=@clave";
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@clave", clave);
