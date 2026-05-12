@@ -1,34 +1,25 @@
 ﻿using BLL;
 using EL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-
-
     public partial class Form4 : Form
-    {   private Form1 _form1; // Referencia a Form1 para actualizar la lista de contactos
+    {
+        private Form1 _form1; // Referencia a Form1 para actualizar la lista de contactos
         private int _idContacto;
         private int _idUsuario;
 
         // Constructor que recibe los datos desde Form1
-        public Form4(Form1 form1,int idContacto, string nombres, string telefono, string correo, string direccion, int idUsuario)
+        public Form4(Form1 form1, int idContacto, string nombres, string telefono, string correo, string direccion, int idUsuario)
         {
             InitializeComponent();
-            _form1 = form1; //se inicializa la referencia a Form1 para que pueda llamar a CargarContactos() después de actualizar y asi 
-            //refrescar la lista de contactos en Form1
+            _form1 = form1; // se inicializa la referencia a Form1 para que pueda llamar a CargarContactos() después de actualizar y así 
+            // refrescar la lista de contactos en Form1
             _idContacto = idContacto;
             _idUsuario = idUsuario;
 
-          
             txtNombres.Text = nombres;
             txtTelefono.Text = telefono;
             txtCorreo.Text = correo;
@@ -37,7 +28,6 @@ namespace GUI
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -57,7 +47,10 @@ namespace GUI
                     string.IsNullOrWhiteSpace(txtCorreo.Text) ||
                     string.IsNullOrWhiteSpace(txtDireccion.Text))
                 {
-                    MessageBox.Show("Todos los campos son obligatorios.");
+                    MessageBox.Show("⚠️ Todos los campos son obligatorios.",
+                                    "Validación de Contacto",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -76,8 +69,6 @@ namespace GUI
                 ContactosBLL contactosBLL = new ContactosBLL();
 
                 // Validaciones ya existentes en tu BLL en lugar de crear nuevas
-                // usamos las funciones de validación que ya tienes implementadas
-                //lo que seria usar el pol
                 contactosBLL.ValidarCorreo(contacto.Correo);
                 contactosBLL.ValidarDuplicados(contacto, contacto.IdUsuario);
 
@@ -86,23 +77,30 @@ namespace GUI
 
                 if (resultado > 0)
                 {
-                    MessageBox.Show("Contacto actualizado correctamente.");
+                    MessageBox.Show("✅ Contacto actualizado correctamente.",
+                                    "Actualizar Contacto",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
                     _form1.CargarContactos(); // refrescar lista en Form1
-                    
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo actualizar el contacto.");
+                    MessageBox.Show("❌ No se pudo actualizar el contacto.",
+                                    "Actualizar Contacto",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 // Si falla alguna validación o el DAL, se muestra el mensaje
-                MessageBox.Show("Error al actualizar contacto: " + ex.Message);
+                MessageBox.Show("⚠️ Error al actualizar contacto: " + ex.Message,
+                                "Actualizar Contacto",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
         }
-
-
 
         // Eventos de los TextBox (pueden quedar vacíos si no los usas)
         private void txtNombres_TextChanged(object sender, EventArgs e) { }

@@ -118,9 +118,9 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(171, 117);
-            this.txtTelefono.Mask = "+ (999) 0000-0000";
+            this.txtTelefono.Mask = "+(999)0000-0000";
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(132, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(121, 22);
             this.txtTelefono.TabIndex = 13;
             this.txtTelefono.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtTelefono_MaskInputRejected);
             // 

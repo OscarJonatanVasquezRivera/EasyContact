@@ -40,13 +40,10 @@ namespace GUI
                     string correo = fila.Cells["Correo"].Value?.ToString() ?? "";
                     string direccion = fila.Cells["Direccion"].Value?.ToString() ?? "";
                     string idUsuario = fila.Cells["IdUsuario"].Value?.ToString() ?? "";
-
-                 
                 }
             }
             catch (Exception ex)
             {
-                // Registrar el error para depuración
                 Console.WriteLine("Error en dgv_CellContentClick: " + ex.Message);
             }
         }
@@ -91,7 +88,10 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Seleccione un contacto para actualizar.");
+                MessageBox.Show("⚠️ Seleccione un contacto para actualizar.",
+                                "Validación de Contacto",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
         }
 
@@ -99,15 +99,22 @@ namespace GUI
         {
             if (dgv.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar un contacto para eliminar.");
+                MessageBox.Show("❌ Debe seleccionar un contacto para eliminar.",
+                                "Eliminar Contacto",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
                 return;
             }
 
             int idContacto = Convert.ToInt32(dgv.CurrentRow.Cells["IdContacto"].Value);
             new ContactosBLL().Eliminar(idContacto, Sesion.IdUsuario);
 
-            MessageBox.Show("Contacto eliminado correctamente.");
-            CargarContactos(); // refresca lista sin abrir Form1 nuevo
+            MessageBox.Show("✅ Contacto eliminado correctamente.",
+                            "Eliminar Contacto",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+            CargarContactos();
         }
 
         private void barraBusqueda_TextChanged(object sender, EventArgs e)
@@ -126,8 +133,8 @@ namespace GUI
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            var confirmar = MessageBox.Show("¿Seguro que deseas cerrar sesión?",
-                                            "Cerrar sesión",
+            var confirmar = MessageBox.Show("🔒 ¿Seguro que deseas cerrar sesión?",
+                                            "Cerrar Sesión",
                                             MessageBoxButtons.YesNo,
                                             MessageBoxIcon.Question);
 
@@ -149,12 +156,10 @@ namespace GUI
 
         private void label5_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

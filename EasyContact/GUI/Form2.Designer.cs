@@ -35,11 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
+            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.bsCliente = new System.Windows.Forms.BindingSource(this.components);
             this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsCliente)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,10 @@
             this.txtNombres.TabIndex = 4;
             this.txtNombres.TextChanged += new System.EventHandler(this.txtNombres_TextChanged);
             // 
+            // bsCliente
+            // 
+            this.bsCliente.DataSource = typeof(EL.ContactosEL);
+            // 
             // txtDireccion
             // 
             this.txtDireccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "Direccion", true));
@@ -116,7 +120,7 @@
             // 
             this.txtTelefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "Telefono", true));
             this.txtTelefono.Location = new System.Drawing.Point(171, 99);
-            this.txtTelefono.Mask = "+ (999) 0000-0000";
+            this.txtTelefono.Mask = "+(999)0000-0000";
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(132, 22);
             this.txtTelefono.TabIndex = 8;
@@ -134,10 +138,6 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // bsCliente
-            // 
-            this.bsCliente.DataSource = typeof(EL.ContactosEL);
             // 
             // btnRegresar
             // 
