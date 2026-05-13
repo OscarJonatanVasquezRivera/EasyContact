@@ -59,3 +59,5 @@ TestResults/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+*.pfx
