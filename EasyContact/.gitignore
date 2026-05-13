@@ -44,7 +44,7 @@ publish/
 # Archivos de configuración de Azure y otros servicios
 *.azurePubxml
 *.json
-*.config
+
 
 # Archivos de test y cobertura
 TestResults/
