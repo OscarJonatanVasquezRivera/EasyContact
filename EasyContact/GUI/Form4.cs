@@ -83,6 +83,10 @@ namespace GUI
                                     MessageBoxIcon.Information);
 
                     _form1.CargarContactos(); // refrescar lista en Form1
+
+                    Form1 f1 = new Form1();
+                    f1.Show();
+                    this.Close();
                 }
                 else
                 {

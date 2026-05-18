@@ -1,9 +1,7 @@
 ﻿using BLL;
-using System;
-using System.Linq;
-using System.Windows.Forms;
-using EL;
 using Helpers;
+using System;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -30,7 +28,9 @@ namespace GUI
         {
             try
             {
-                if (e.RowIndex >= 0 && dgv.CurrentRow != null)
+                if (e.RowIndex >= 0 && dgv.CurrentRow != null) // el rowindex sirve para asegurarnos de que se
+                                                               // tome toda la fila y no solo una celda
+                                                               //evitando errores o excepciones inesperadas
                 {
                     DataGridViewRow fila = dgv.CurrentRow;
 
@@ -90,7 +90,8 @@ namespace GUI
             {
                 MessageBox.Show("⚠️ Seleccione un contacto para actualizar.",
                                 "Validación de Contacto",
-                                MessageBoxButtons.OK,
+                                MessageBoxButtons.OK,  // El botón OK es el único disponible en este mensaje
+                                                       // usamos Warning que es algo propio de windoms 
                                 MessageBoxIcon.Warning);
             }
         }
